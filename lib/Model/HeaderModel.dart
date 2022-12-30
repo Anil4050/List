@@ -1,37 +1,33 @@
-class ListData {
-  final String? header;
-  final List<SubList>? subHead;
+import 'package:flutter/cupertino.dart';
 
-  ListData({this.header, this.subHead});
+class listModel {
+  String? header;
+
+  listModel({
+    required this.header,
+  });
+
+  // listModel.fromJson(Map<String, dynamic> json) {
+  //   if (json['header'] != null) {
+  //     header = <Header>[];
+  //     json['header'].forEach((v) {
+  //       header!.add(new Header.fromJson(v));
+  //     }
+  //   );
+  // }
+  // }
 }
 
-class SubList {
-  final String header;
-  final int id;
+class Title {
+  int? id;
 
-  SubList(this.header, this.id);
+  String? title;
+
+  Title({this.id, this.title});
+
+  Title.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+
+    title = json['title'];
+  }
 }
-
-// class listModel {
-//   String? header;
-
-//   List<String>? subHeader;
-
-//   listModel({
-//     required this.header,
-//     required this.subHeader,
-//   });
-
-//   listModel.fromJson(Map<String, dynamic> json) {
-//     header = json['state'];
-//     subHeader = json['lgas'].cast<String>();
-//   }
-
-//   Map<String, dynamic> toJson() {
-//     final Map<String, dynamic> data = Map<String, dynamic>();
-//     data['header'] = this.header;
-//     data['subHeader'] = this.subHeader;
-
-//     return data;
-//   }
-// }
